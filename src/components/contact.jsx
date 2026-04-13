@@ -19,7 +19,7 @@ export function Contact() {
           size="lg"
           className="bg-primary hover:bg-primary/90 text-primary-foreground mb-12"
         >
-          <a href="mailto:TU_EMAIL_AQUI">
+          <a href="mailto:[cesarnef@outlook.com]">
             <Mail className="w-5 h-5 mr-2" />
             Enviar mensaje
           </a>
@@ -45,7 +45,7 @@ export function Contact() {
             <span className="text-sm">GitHub</span>
           </a>
           <a
-            href="mailto:TU_EMAIL_AQUI"
+            href="mailto:[cesarnef@outlook.com]"
             className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
           >
             <Mail className="w-5 h-5" />
