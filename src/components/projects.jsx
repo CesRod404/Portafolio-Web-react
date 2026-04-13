@@ -8,7 +8,7 @@ const projects = [
     technologies: ["React", "Node.js", "Express", "MongoDB", "CSS3"],
     liveUrl: "https://ecommerceropainfantil.web.app",
     githubUrl: "https://github.com/CesRod404",
-    image: "../public/MiCarita.png",
+    image: "/MiCarita.png",
   },
   {
     title: "Web Project Around",
@@ -17,7 +17,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "JavaScript", "APIs"],
     liveUrl: "https://cesrod404.github.io/web_project_around",
     githubUrl: "https://github.com/CesRod404/web_project_around",
-    image: "../public/MiCarita.png",
+    image: "/MiCarita.png",
   },
   {
     title: "Maison Dorée - Restaurante Gourmet",
@@ -26,7 +26,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "TypeScript"],
     liveUrl: "https://landingrestaurante.netlify.app",
     githubUrl: "https://github.com/CesRod404",
-    image: "../public/MiCarita.png",
+    image: "/MiCarita.png",
   },
   {
     title: "Biblioteca Triple Peaks – Proyecto Web",
@@ -35,7 +35,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "Flexbox"],
     liveUrl: "https://cesrod404.github.io/web_project_library_es/#staff",
     githubUrl: "https://github.com/CesRod404/web_project_library_es",
-    image: "../public/MiCarita.png",
+    image: "/MiCarita.png",
   },
 ];
 

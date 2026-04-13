@@ -33,7 +33,7 @@ export function Navbar() {
               </a>
             ))}
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <a href="../public/CV_Cesar_Rodriguez.pdf" download="CV_Cesar_Rodriguez.pdf" rel="noopener noreferrer">
+              <a href="/Cesar_Rodriguez_CV.pdf" download="Cesar_Rodriguez_CV.pdf" rel="noopener noreferrer">
                 Descargar CV
               </a>
             </Button>
@@ -65,7 +65,7 @@ export function Navbar() {
               </a>
             ))}
             <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-              <a href="../public/CV_Cesar_Rodriguez.pdf" download="CV_Cesar_Rodriguez.pdf" rel="noopener noreferrer">
+              <a href="/Cesar_Rodriguez_CV.pdf" download="Cesar_Rodriguez_CV.pdf" rel="noopener noreferrer">
                 Descargar CV
               </a>
             </Button>
