@@ -24,7 +24,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "JavaScript", "APIs"],
     liveUrl: "https://servicios-medicos-empresariales.vercel.app",
     githubUrl: "https://github.com/CesRod404/web_project_around",
-    image: "../public/serviciosMedicos.png",
+    image: "/serviciosMedicos.png",
   },
   {
     title: "Maison Dorée - Restaurante Gourmet",
@@ -33,7 +33,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "TypeScript"],
     liveUrl: "https://landingrestaurante.netlify.app",
     githubUrl: "https://github.com/CesRod404",
-    image: "../public/restaurant.png",
+    image: "/restaurant.png",
   },
   {
     title: "Biblioteca Triple Peaks – Proyecto Web",
@@ -42,7 +42,7 @@ const projects = [
     technologies: ["HTML5", "CSS3", "Flexbox"],
     liveUrl: "https://cesrod404.github.io/web_project_library_es/#staff",
     githubUrl: "https://github.com/CesRod404/web_project_library_es",
-    image: "../public/biblioteca.png",
+    image: "/biblioteca.png",
   },
 ];
 

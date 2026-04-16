@@ -28,7 +28,7 @@ export function About() {
           <div className="relative">
             <div className="aspect-square bg-card rounded-lg border border-border overflow-hidden group">
               <div className="absolute inset-0 bg-transparent group-hover:bg-primary/20 transition-colors duration-300" />
-              <img src="../public/MiCarita.png" alt="Foto mia jeje" className="w-full h-full object-cover" />
+              <img src="/MiCarita.png" alt="Foto mia jeje" className="w-full h-full object-cover" />
             </div>
             <div className="absolute -bottom-4 -right-4 w-full h-full border-2 border-primary rounded-lg -z-10" />
           </div>
