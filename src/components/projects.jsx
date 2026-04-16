@@ -23,7 +23,7 @@ const projects = [
       "Aplicación web responsiva basada en un brief de Figma. Implementa un sistema de tarjetas dinámicas, likes y consumo de API para mostrar contenido dinámico.",
     technologies: ["HTML5", "CSS3", "JavaScript", "APIs"],
     liveUrl: "https://servicios-medicos-empresariales.vercel.app",
-    githubUrl: "https://github.com/CesRod404/web_project_around",
+    githubUrl: "https://github.com/CesRod404/Servicios-Medicos-Empresariales",
     image: "/serviciosMedicos.png",
   },
   {
