@@ -1,57 +1,57 @@
-import { Mail, Linkedin, Github } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { site } from "@/data/site";
+import { DOG, PixelIcon } from "./pixel-icons";
 
 export function Contact() {
   return (
-    <section id="contacto" className="py-24 px-4 sm:px-6 lg:px-8 bg-card/50">
-      <div className="max-w-2xl mx-auto text-center">
-        <span className="text-primary font-mono text-sm">04. Contacto</span>
-        <h2 className="text-3xl sm:text-4xl font-bold text-foreground mt-4 mb-6">
-          ¿Interesado en trabajar conmigo?
-        </h2>
-        <p className="text-muted-foreground mb-8 leading-relaxed">
-          Estoy abierto a nuevas oportunidades y desafíos. Si tienes un proyecto en mente o
-          simplemente quieres conectar, no dudes en contactarme.
-        </p>
-
-        <Button
-          asChild
-          size="lg"
-          className="bg-primary hover:bg-primary/90 text-primary-foreground mb-12"
-        >
-          <a href="mailto:[cesarnef@outlook.com]">
-            <Mail className="w-5 h-5 mr-2" />
-            Enviar mensaje
-          </a>
-        </Button>
-
-        <div className="flex justify-center items-center gap-8">
-          <a
-            href="https://www.linkedin.com/in/cesrodriguezsif"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Linkedin className="w-5 h-5" />
-            <span className="text-sm">LinkedIn</span>
-          </a>
-          <a
-            href="https://github.com/CesRod404"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Github className="w-5 h-5" />
-            <span className="text-sm">GitHub</span>
-          </a>
-          <a
-            href="mailto:[cesarnef@outlook.com]"
-            className="flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <Mail className="w-5 h-5" />
-            <span className="text-sm">Email</span>
-          </a>
+    <section className="band band-purple contact" id="contacto" aria-labelledby="contacto-title">
+      <div className="shell contact-grid">
+        <div>
+          <h2 id="contacto-title" className="pixel contact-title">
+            Contacto
+          </h2>
+          <p className="contact-lead">
+            ¿Tienes un café, un restaurante o una tienda? Cuéntame qué
+            necesitas. Si la idea es un sistema, como boletos para un evento
+            o un tablero, también lo armo.
+          </p>
+          <p className="mail-row">
+            <a className="mail-chip" href={site.emailHref}>
+              {site.email}
+            </a>
+            <a className="btn btn-orange" href={site.emailHref}>
+              Escribir
+            </a>
+          </p>
         </div>
+
+        <ul className="contact-links">
+          <li>
+            <a href={site.github} target="_blank" rel="noopener noreferrer">
+              GitHub
+              <span className="sr-only">, se abre en una pestaña nueva</span>
+            </a>
+          </li>
+          <li>
+            <a href={site.linkedin} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+              <span className="sr-only">, se abre en una pestaña nueva</span>
+            </a>
+          </li>
+          <li>
+            <a href={site.cv} download>
+              Currículum
+              <span className="sr-only">, archivo PDF</span>
+            </a>
+          </li>
+        </ul>
+
+        <figure className="mascot">
+          <PixelIcon art={DOG} className="dog" label="Perro pixelado saludando" />
+          <figcaption>
+            <span className="pixel mascot-word">Hola</span>
+            <span>Gracias por pasarte</span>
+          </figcaption>
+        </figure>
       </div>
     </section>
   );

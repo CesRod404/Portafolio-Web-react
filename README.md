@@ -1,42 +1,32 @@
-# Portafolio Web React (JS)
+# Portafolio de César Rodríguez
 
-Este proyecto es una migración del portafolio original de TypeScript/Next.js a React con JavaScript (JSX) usando Vite.
-
-## Requisitos
-
-- Node.js (versión 18 o superior)
-- npm
-
-## Instalación
-
-```bash
-npm install
-```
+Sitio de César Neftalí Rodríguez Sifuentes, desarrollador full stack en Zacatecas. Está pensado para negocios locales —cafés, restaurantes y tiendas— y también muestra software a la medida.
 
 ## Desarrollo
 
 ```bash
+npm install
 npm run dev
 ```
 
-## Estructura del Proyecto
+## Producción
 
-- `/src`
-  - `/components`: Componentes reutilizables.
-  - `/components/ui`: Componentes de UI (Radix UI / Shadcn).
-  - `/pages`: Páginas de la aplicación (Home).
-  - `/assets`: Recursos estáticos como imágenes.
-  - `/styles`: Estilos globales (Tailwind CSS v4).
-  - `/lib`: Utilidades.
-  - `App.jsx`: Componente principal.
-  - `main.jsx`: Punto de entrada.
+```bash
+npm run build
+npm run preview
+```
 
-## Tecnologías
+El build estático sale en `dist/` y se puede publicar en Vercel.
 
-- React 19
-- Vite
-- Tailwind CSS v4
-- Lucide React
-- Radix UI
-- React Router DOM
-- Next Themes (para el modo oscuro)
+## Agregar un proyecto
+
+Edita `src/data/projects.js` y suma un objeto al arreglo `projects`. El orden del arreglo es el orden en la página.
+
+No lo publiques hasta que el demo esté en línea. Cuando exista la URL, se puede sumar FerIA (app de hackathon) con el mismo formato:
+
+- `id`, `title`, `kind`, `summary`
+- `stack` (etiquetas)
+- `demoUrl`, `repoUrl`
+- `image` y `imageAlt` (opcionales; sin imagen se muestran las iniciales)
+
+Las etiquetas de la sección «Sobre mí» salen de esos proyectos.

@@ -1,12 +1,7 @@
-import Home from './pages/Home'
-import { ThemeProvider } from './components/theme-provider'
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <ThemeProvider attribute="class" defaultTheme="dark" enableSystem>
-      <Home />
-    </ThemeProvider>
-  )
+  return <Home />;
 }
 
-export default App
+export default App;

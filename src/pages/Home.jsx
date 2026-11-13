@@ -1,20 +1,25 @@
-import { Navbar } from '../components/navbar';
-import { Hero } from '../components/hero';
-import { About } from '../components/about';
-import { Skills } from '../components/skills';
-import { Projects } from '../components/projects';
-import { Contact } from '../components/contact';
-import { Footer } from '../components/footer';
+import { Navbar } from "../components/navbar";
+import { Hero } from "../components/hero";
+import { HelloStrip } from "../components/hello-strip";
+import { Services } from "../components/services";
+import { Projects } from "../components/projects";
+import { About } from "../components/about";
+import { Contact } from "../components/contact";
+import { Footer } from "../components/footer";
 
 export default function Home() {
   return (
     <>
+      <a className="skip" href="#contenido">
+        Saltar al contenido
+      </a>
       <Navbar />
-      <main className="relative">
+      <main id="contenido">
         <Hero />
-        <About />
-        <Skills />
+        <HelloStrip />
+        <Services />
         <Projects />
+        <About />
         <Contact />
       </main>
       <Footer />

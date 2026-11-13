@@ -1,77 +1,74 @@
-import { useState } from 'react';
-import { Menu, X, Download } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { useEffect, useId, useState } from "react";
+import { PlanetMark } from "./pixel-icons";
 
-const navLinks = [
-  { name: "Inicio", href: "#inicio" },
-  { name: "Sobre mí", href: "#sobre-mi" },
-  { name: "Habilidades", href: "#habilidades" },
-  { name: "Proyectos", href: "#proyectos" },
-  { name: "Contacto", href: "#contacto" },
+const links = [
+  { href: "#inicio", label: "Inicio" },
+  { href: "#servicios", label: "Servicios" },
+  { href: "#proyectos", label: "Proyectos" },
+  { href: "#sobre-mi", label: "Sobre mí" },
+  { href: "#contacto", label: "Contacto" },
 ];
 
 export function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
+  const [open, setOpen] = useState(false);
+  const menuId = useId();
+
+  useEffect(() => {
+    if (!open) return undefined;
+    const onKey = (event) => {
+      if (event.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  const close = () => setOpen(false);
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/80 backdrop-blur-md border-b border-border">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-16">
-          <a href="#inicio" className="text-xl font-bold text-foreground hover:text-primary transition-colors">
-            César Rodríguez
+    <header className="nav">
+      <div className="shell nav-bar">
+        <a className="brand" href="#inicio" onClick={close}>
+          <PlanetMark />
+          <span className="brand-text">
+            <span className="brand-name pixel">César</span>
+            <span className="brand-place">Zacatecas</span>
+          </span>
+        </a>
+
+        <nav className="nav-desktop" aria-label="Principal">
+          {links.map((link) => (
+            <a key={link.href} href={link.href}>
+              {link.label}
+            </a>
+          ))}
+          <a className="btn btn-teal" href="#contacto">
+            Escribir
           </a>
+        </nav>
 
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground">
-              <a href="/Cesar_Rodriguez_CV.pdf" download="Cesar_Rodriguez_CV.pdf" rel="noopener noreferrer">
-                Descargar CV
-              </a>
-            </Button>
-          </div>
-
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-foreground"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-          </button>
-        </div>
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls={menuId}
+          onClick={() => setOpen((value) => !value)}
+        >
+          {open ? "Cerrar" : "Menú"}
+        </button>
       </div>
 
-      {/* Mobile Navigation */}
-      {isOpen && (
-        <div className="md:hidden bg-background border-b border-border">
-          <div className="px-4 py-4 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <a
-                key={link.name}
-                href={link.href}
-                className="text-muted-foreground hover:text-foreground transition-colors text-sm font-medium"
-                onClick={() => setIsOpen(false)}
-              >
-                {link.name}
-              </a>
-            ))}
-            <Button asChild className="bg-primary hover:bg-primary/90 text-primary-foreground w-full">
-              <a href="/Cesar_Rodriguez_CV.pdf" download="Cesar_Rodriguez_CV.pdf" rel="noopener noreferrer">
-                Descargar CV
-              </a>
-            </Button>
-          </div>
-        </div>
+      {open && (
+        <nav id={menuId} className="nav-mobile" aria-label="Principal">
+          {links.map((link) => (
+            <a key={link.href} href={link.href} onClick={close}>
+              {link.label}
+            </a>
+          ))}
+          <a className="btn btn-teal" href="#contacto" onClick={close}>
+            Escribir
+          </a>
+        </nav>
       )}
-    </nav>
+    </header>
   );
 }

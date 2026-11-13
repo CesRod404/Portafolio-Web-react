@@ -1,67 +1,57 @@
-import { Github, Linkedin, ArrowDown } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+import { site } from "@/data/site";
+import { CrtComputer } from "./crt-computer";
+import { FOLDER, HOME, MAIL, PixelIcon, PlanetMark, STORE } from "./pixel-icons";
+
+const shortcuts = [
+  { href: "#inicio", label: "Inicio", art: HOME },
+  { href: "#servicios", label: "Servicios", art: STORE },
+  { href: "#proyectos", label: "Proyectos", art: FOLDER },
+  { href: "#contacto", label: "Contacto", art: MAIL },
+];
 
 export function Hero() {
   return (
-    <section
-      id="inicio"
-      className="min-h-screen flex flex-col justify-center pt-16 px-4 sm:px-6 lg:px-8"
-    >
-      <div className="max-w-4xl mx-auto">
-        <p className="text-primary font-mono text-sm mb-4 tracking-wider">
-          {"// Hola, mi nombre es"}
-        </p>
-        <h1 className="text-4xl sm:text-5xl lg:text-7xl font-bold text-foreground mb-4 text-balance">
-          César Rodríguez
-        </h1>
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-muted-foreground mb-6">
-          Full Stack Developer
-        </h2>
-        <p className="text-muted-foreground text-lg sm:text-xl max-w-2xl mb-8 leading-relaxed">
-          Construyendo aplicaciones web funcionales, escalables y centradas en el usuario.
-          Especializado en React, Node.js y bases de datos modernas.
-        </p>
-
-        <div className="flex flex-wrap gap-4 mb-12">
-          <Button asChild size="lg" className="bg-primary hover:bg-primary/90 text-primary-foreground">
-            <a href="#proyectos">Ver proyectos</a>
-          </Button>
-          <Button
-            asChild
-            size="lg"
-            variant="outline"
-            className="border-border hover:bg-secondary text-foreground"
-          >
-            <a href="#contacto">Contactarme</a>
-          </Button>
+    <section className="hero" id="inicio">
+      <div className="shell hero-grid">
+        <div className="hero-copy">
+          <p className="hero-kicker">{site.role} · {site.place}</p>
+          <h1 className="hero-title pixel" aria-label={site.name}>
+            <span className="line line-orange">César</span>
+            <span className="line line-teal">Web</span>
+          </h1>
+          <p className="hero-name">{site.name}</p>
+          <p className="hero-lead">
+            Armo páginas para cafés, restaurantes y tiendas, y software cuando
+            hace falta algo más que un sitio: boletos de un evento, pedidos o
+            un tablero para operar.
+          </p>
+          <div className="hero-actions">
+            <a className="btn btn-teal" href="#proyectos">
+              Ver proyectos
+            </a>
+            <a className="btn btn-orange" href="#contacto">
+              Platiquemos
+            </a>
+          </div>
+          <p className="hero-note">
+            <PlanetMark className="planet planet-sm" />
+            <span>Desde Zacatecas. Hecho para verse bien en el celular.</span>
+          </p>
         </div>
 
-        <div className="flex items-center gap-6">
-          <a
-            href="https://www.linkedin.com/in/cesrodriguezsif"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="LinkedIn"
-          >
-            <Linkedin className="w-6 h-6" />
-          </a>
-          <a
-            href="https://github.com/CesRod404"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-muted-foreground hover:text-primary transition-colors"
-            aria-label="GitHub"
-          >
-            <Github className="w-6 h-6" />
-          </a>
+        <div className="hero-art">
+          <CrtComputer />
+          <p className="hero-badge pixel">Listo para tu negocio</p>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 hidden sm:block animate-bounce">
-          <a href="#sobre-mi" aria-label="Scroll down">
-            <ArrowDown className="w-6 h-6 text-muted-foreground" />
-          </a>
-        </div>
+        <nav className="rail" aria-label="Atajos">
+          {shortcuts.map((item) => (
+            <a key={item.href} href={item.href}>
+              <PixelIcon art={item.art} />
+              <span>{item.label}</span>
+            </a>
+          ))}
+        </nav>
       </div>
     </section>
   );
