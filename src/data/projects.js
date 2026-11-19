@@ -56,7 +56,7 @@ export const projects = [
     summary:
       "Flyer web de un evento: cartel, lineup, horario y tipos de boleto, más una sección de próximos eventos.",
     stack: ["HTML", "CSS", "JavaScript"],
-    demoUrl: "https://flayer-fiesta.vercel.app",
+    demoUrl: "https://p-gina-bien-venida.vercel.app/",
     repoUrl: "https://github.com/CesRod404/FlayerFiesta",
     image: "/projects/fiesta-neon.jpg",
     imageAlt:
